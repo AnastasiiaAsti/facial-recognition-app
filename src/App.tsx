@@ -1,14 +1,12 @@
 import React from 'react';
 import './App.css';
-import WebcamComponent from './components/Webcam'
-import FacialRecognitionComponent from './components/FacialRecognitionComponent';
+import WebCamComponent from './components/WebCamComponent';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <WebcamComponent/>
-        <FacialRecognitionComponent/>
+        <WebCamComponent/>
       </header>
     </div>
   );

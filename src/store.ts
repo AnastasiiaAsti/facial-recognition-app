@@ -1,16 +1,18 @@
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk'; // Import redux-thunk
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import thunk from 'redux-thunk';
 import webcamReducer from './reducers/webcamReducer';
-import facialRecognitionReducer from './reducers/facialRecognitionReducer';
+
+interface RootState {
+  webcam: ReturnType<typeof webcamReducer>;
+}
 
 const rootReducer = combineReducers({
-    webcam: webcamReducer,
-    facialRecognition: facialRecognitionReducer,
+  webcam: webcamReducer,
 });
 
-const store = createStore(
-    rootReducer,
-    applyMiddleware(thunk)
+const store = createStore<RootState, any, any, any>(
+  rootReducer,
+  applyMiddleware(thunk)
 );
 
 export default store;
