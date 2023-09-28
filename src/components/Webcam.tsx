@@ -17,7 +17,7 @@ const WebcamComponent: React.FC<WebcamComponentProps> = ({
     facingMode: 'user',
   };
   return (
-    <div>
+    <div className="webcam" id="webcam">
       <button onClick={toggleWebcam}>
         {isWebcamOn ? 'Turn Off Webcam' : 'Turn On Webcam'}
       </button>
