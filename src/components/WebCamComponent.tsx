@@ -65,7 +65,7 @@ const WebCamComponent: React.FC<WebCamComponentProps> = ({
                         const width = bottomRight[0] - x;
                         const height = bottomRight[1] - y;
 
-                        canvasBox.strokeStyle = 'black';
+                        canvasBox.strokeStyle = '#FF5A78';
                         canvasBox.lineWidth = 2;
                         canvasBox.strokeRect(x, y, width, height);
                     });
@@ -80,23 +80,10 @@ const WebCamComponent: React.FC<WebCamComponentProps> = ({
                 <button onClick={toggleWebcam}>
                     {isWebcamOn ? 'Face Recognition OFF' : 'Face Recognition ON'}
                 </button>
-                {isWebcamOn && <Webcam ref={webcamRef} style={{ display: 'flex', textAlign: 'center', width: 300, height: 800, marginLeft: 'auto', marginRight: 'auto', left: 0, right: 0, zIndex: 9, }} />}
+                {isWebcamOn && <Webcam ref={webcamRef} style={{ display: 'flex', textAlign: 'center', width: 300, height: 300, marginLeft: 'auto', marginRight: 'auto', left: 0, right: 0, zIndex: 9, }} />}
                 </div>
             
-            <canvas
-                ref={canvasRef}
-                style={{
-                    position: 'absolute',
-                    textAlign: 'center',
-                    width: 300,
-                    height: 300,
-                    marginLeft: 'auto',
-                    marginRight: 'auto',
-                    left: 0,
-                    right: 0,
-                    zIndex: 9,
-                }}
-            />
+            {isWebcamOn && <canvas ref={canvasRef} style={{ position: 'absolute', textAlign: 'center', width: 300, height: 300, marginLeft: 'auto', marginRight: 'auto', left: 0, right: 0, zIndex: 9, }} />}
         </>
     );
 };

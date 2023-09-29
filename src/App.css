@@ -19,6 +19,13 @@
   color: white;
 }
 
-.webcam {
-  height: 80vh;
+
+
+button {
+  position: absolute;
+  width: 200px;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 30px auto;
 }
